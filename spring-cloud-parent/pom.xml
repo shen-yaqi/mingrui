@@ -11,6 +11,7 @@
         <module>eureka-server</module>
         <module>eureka-client</module>
         <module>eureka-ribbon</module>
+        <module>eureka-feign</module>
     </modules>
 
     <!--父级maven项目需要将packaging的类型写成pom-->
