@@ -1,5 +1,6 @@
 package com.mr.syq.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,11 +26,16 @@ public class TestEurekaRibbonController {
     }
 
     @GetMapping
+    @HystrixCommand(fallbackMethod = "mrError")//值为方法名
     public String test(String name){
 
         //http://eureka客户端服务名/模块名
         String url = "http://EUREKA-CLIENT/eureka-client?name=" + name;
         String forObject = restTemplate.getForObject(url, String.class);
         return forObject;
+    }
+
+    public String mrError(String name){//方法参数必须和Hystrix的方法参数一致
+        return "error" + name;
     }
 }
