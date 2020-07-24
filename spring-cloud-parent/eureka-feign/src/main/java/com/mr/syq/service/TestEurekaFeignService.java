@@ -1,12 +1,13 @@
 package com.mr.syq.service;
 
 import com.mr.syq.entity.UserEntity;
+import com.mr.syq.service.fallback.TestEurekaFeignFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(value = "EUREKA-CLIENT")//声明当前接口调用的eureka服务 值为服务名称
+@FeignClient(value = "EUREKA-CLIENT",fallback = TestEurekaFeignFallback.class)//声明当前接口调用的eureka服务 值为服务名称
 public interface TestEurekaFeignService {
     //value = eureka服务的方法地址 consumes = 指定请求的数据类型 produces = 指定返回的数据类型
     @GetMapping(value = "eureka-client",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
