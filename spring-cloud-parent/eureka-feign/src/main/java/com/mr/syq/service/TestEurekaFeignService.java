@@ -19,15 +19,15 @@ public interface TestEurekaFeignService {
         与spring在机制上不兼容，因此无法使用。
     spring cloud在2.1.x版本中提供了@SpringQueryMap注解，可以传递对象参数，
     框架自动解析，只可惜啊，得是2.1.0以后的版本。*/
-    @GetMapping(value = "eureka-client/pojo",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "eureka-client-controller/pojo",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
     String test(@SpringQueryMap UserEntity entity);
 
-    @PostMapping(value = "eureka-client", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "eureka-client-controller", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     String testPost(UserEntity entity);
 
-    @PutMapping(value = "eureka-client", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "eureka-client-controller", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     String testPut(UserEntity entity);
 
-    @DeleteMapping(value = "eureka-client", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(value = "eureka-client-controller", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     String testDel(@RequestParam String ids);
 }

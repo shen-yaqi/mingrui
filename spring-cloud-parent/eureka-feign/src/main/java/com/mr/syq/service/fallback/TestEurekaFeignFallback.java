@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @Date 2020/7/24
  * @Version V1.0
  **/
-@Component
+@Component//声明当前类是spring的组件
 public class TestEurekaFeignFallback implements TestEurekaFeignService {
     @Override
     public String test(String name) {

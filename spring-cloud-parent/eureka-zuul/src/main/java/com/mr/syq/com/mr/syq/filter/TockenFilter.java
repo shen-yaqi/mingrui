@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
  * @Date 2020/7/24
  * @Version V1.0
  **/
-@Component// 声明当前类是一个spring的组件(受spring管理)
+//@Component// 声明当前类是一个spring的组件(受spring管理)
 public class TockenFilter extends ZuulFilter {
 
     Logger logger = LoggerFactory.getLogger(TockenFilter.class);

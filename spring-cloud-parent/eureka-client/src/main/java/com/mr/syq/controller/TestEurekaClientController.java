@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
  * @Version V1.0
  **/
 @RestController
-@RequestMapping(value = "eureka-client")
+@RequestMapping(value = "eureka-client-controller")
 public class TestEurekaClientController {
 
     @GetMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -31,11 +31,6 @@ public class TestEurekaClientController {
 
         System.out.println("=====================" + entity);
         return "success";
-    }
-
-    public String testFallbackMethod(UserEntity entity){
-        System.out.println("testFallbackMethod");
-        return "testFallbackMethod";
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -57,6 +52,17 @@ public class TestEurekaClientController {
     public String testDelete(String ids){
         System.out.println(ids);
         return ids;
+    }
+
+
+    public String testFallbackMethod(UserEntity entity){
+        System.out.println("testFallbackMethod");
+        return "testFallbackMethod";
+    }
+
+    public String testFallbackMethod(String name){
+        System.out.println("testFallbackMethod");
+        return "testFallbackMethod";
     }
 
 }

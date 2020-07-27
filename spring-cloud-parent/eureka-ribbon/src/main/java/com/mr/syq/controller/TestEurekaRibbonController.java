@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
  * @Version V1.0
  **/
 @RestController
-@RequestMapping(value = "eureka-ribbon")
+@RequestMapping(value = "eureka-ribbon-controller")
 public class TestEurekaRibbonController {
 
     private RestTemplate restTemplate;
@@ -30,7 +30,7 @@ public class TestEurekaRibbonController {
     public String test(String name){
 
         //http://eureka客户端服务名/模块名
-        String url = "http://EUREKA-CLIENT/eureka-client?name=" + name;
+        String url = "http://EUREKA-CLIENT/eureka-client-controller?name=" + name;
         String forObject = restTemplate.getForObject(url, String.class);
         return forObject;
     }

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
  * @Version V1.0
  **/
 @RestController
-@RequestMapping(value = "eureka-feign")
+@RequestMapping(value = "eureka-feign-controller")
 public class TestEurekaFeignController {
 
     private TestEurekaFeignService service;

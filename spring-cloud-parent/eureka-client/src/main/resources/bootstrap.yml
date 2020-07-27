@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: eureka-client
+  cloud:
+    config:
+      name: eureka-client
+      profile: dev
+      uri: http://localhost:8888
+      username: mingrui
+      password: 123456
+
+
+
+

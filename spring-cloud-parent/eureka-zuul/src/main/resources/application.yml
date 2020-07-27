@@ -9,16 +9,21 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-zuul:
+#zuul:
   # 声明路由
-  routes:
+  #routes:
     # 路由名称
-    api-ribbon:
+    #api-ribbon:
       # 声明将所有以/api-ribbon/的请求都转发到eureka-ribbon的服务中
-      path: /api-ribbon/**
-      serviceId: EUREKA-RIBBON
+      #path: /api-ribbon/**
+      #serviceId: EUREKA-RIBBON
     # 路由名称
-    api-feign:
+    #api-feign:
       # 声明将所有以/api-feign/的请求都转发到eureka-feign的服务中
-      path: /api-feign/**
-      serviceId: EUREKA-FEIGN
+      #path: /api-feign/**
+      #serviceId: EUREKA-FEIGN
+    #如果path和serviceId一直的话可以简写
+    #eureka-feign: /eureka-feign/**
+
+# 也可以任何路由规则都不配置,使用zuul的默认规则
+#http://localhost:8769/eureka-feign/eureka-feign-controller?name=zhaojunhao
