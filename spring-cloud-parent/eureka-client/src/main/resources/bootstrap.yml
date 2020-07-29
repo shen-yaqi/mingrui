@@ -6,10 +6,14 @@ spring:
     name: eureka-client
   cloud:
     config:
+      # 配置文件前缀 多个配置文件之间用,隔开
       name: eureka-client
+      # 配置文件后缀
       profile: dev
       uri: http://localhost:8888
+      # 配置中心用户
       username: mingrui
+      #配置中心密码
       password: 123456
 
 

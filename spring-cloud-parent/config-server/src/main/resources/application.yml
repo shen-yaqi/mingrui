@@ -3,15 +3,19 @@ server:
 spring:
   security:
     user:
+      # 配置中心用户
       name: mingrui
+      # 配置中心密码
       password: 123456
   application:
     name: config-server
   profiles:
+    # 使用本地配置文件
     active: native
 
   cloud:
     config:
       server:
         native:
+          # 声明本地配置文件目录
           search-locations: classpath:/config

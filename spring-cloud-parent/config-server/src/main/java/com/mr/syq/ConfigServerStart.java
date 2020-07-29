@@ -12,7 +12,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  * @Version V1.0
  **/
 @SpringBootApplication
-@EnableConfigServer
+@EnableConfigServer//声明当前服务是一个configserver
 public class ConfigServerStart {
     public static void main(String[] args) {
         SpringApplication.run(ConfigServerStart.class);
