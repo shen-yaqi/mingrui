@@ -2,6 +2,11 @@ server:
   port: 8080
 
 spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   application:
     name: eureka-client
   cloud:
@@ -20,6 +25,18 @@ spring:
         enabled: true
         # 配置中心id
         service-id: CONFIG-SERVER
+    # 启用bus
+    bus:
+      enabled: true
+      # 启用消息跟踪
+      trace:
+        enabled: true
+# 暴露bus-refresh端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
 eureka:
   client:
     service-url:
