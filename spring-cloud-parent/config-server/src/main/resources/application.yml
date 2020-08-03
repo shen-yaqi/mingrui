@@ -19,3 +19,9 @@ spring:
           username: shenyaqiii@163.com
           password: shenyaqi.110
       label: master
+
+eureka:
+  client:
+    service-url:
+      # 指定注册中心的服务地址
+      defaultZone: http://119.45.191.248:8761/eureka/
