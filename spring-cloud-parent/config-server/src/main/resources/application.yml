@@ -14,10 +14,15 @@ spring:
     config:
       server:
         git:
+          # git仓库地址
           uri: https://github.com/shen-yaqi/mingrui.git
+          # 配置文件所在目录
           search-paths: spring-cloud-parent/config-server/src/main/resources/config
+          # git账号
           username: shenyaqiii@163.com
+          # git密码
           password: shenyaqi.110
+      #分支
       label: master
 
 eureka:

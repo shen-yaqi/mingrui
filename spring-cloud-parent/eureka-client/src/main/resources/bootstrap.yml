@@ -7,14 +7,24 @@ spring:
   cloud:
     config:
       # 配置文件前缀 多个配置文件之间用,隔开
-      name: eureka-client
+      name: customize
       # 配置文件后缀
       profile: dev
-      uri: http://localhost:8888
+      #uri: http://localhost:8888
       # 配置中心用户
       username: mingrui
       #配置中心密码
       password: 123456
+      discovery:
+        #启用配置中心高可用
+        enabled: true
+        # 配置中心id
+        service-id: CONFIG-SERVER
+eureka:
+  client:
+    service-url:
+      # 指定注册中心的服务地址
+      defaultZone: http://119.45.191.248:8761/eureka/
 
 
 
