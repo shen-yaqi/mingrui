@@ -38,4 +38,9 @@ public class TestEurekaFeignFallback implements TestEurekaFeignService {
     public String testDel(String ids) {
         return null;
     }
+
+    @Override
+    public String method() {
+        return null;
+    }
 }

@@ -3,6 +3,7 @@ package com.mr.syq.controller;
 import com.mr.syq.entity.UserEntity;
 import com.mr.syq.service.TestEurekaFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -19,7 +20,7 @@ public class TestEurekaFeignController {
     private TestEurekaFeignService service;
 
     @Autowired
-    public void setService(TestEurekaFeignService service) {
+    public void setService( TestEurekaFeignService service) {
         this.service = service;
     }
 

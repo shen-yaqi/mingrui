@@ -7,6 +7,7 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 /**
@@ -18,6 +19,7 @@ import org.springframework.context.annotation.Bean;
  **/
 @SpringBootApplication
 @EnableEurekaClient
+@EnableFeignClients//声明当前服务是一个feign客户端,同时扫描FeignClient接口
 @EnableCircuitBreaker//启用断路器
 @EnableHystrixDashboard//启用断路器可视化
 public class EurekaClientStart {

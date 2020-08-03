@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @FeignClient(value = "EUREKA-CLIENT",fallback = TestEurekaFeignFallback.class)//声明当前接口调用的eureka服务 值为服务名称
 public interface TestEurekaFeignService {
     //value = eureka服务的方法地址 consumes = 指定请求的数据类型 produces = 指定返回的数据类型
-    @GetMapping(value = "eureka-client",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "eureka-client-controller",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
     public String test(@RequestParam String name);
 
     /*spring cloud项目使用feign的时候都会发现一个问题，
@@ -30,4 +30,9 @@ public interface TestEurekaFeignService {
 
     @DeleteMapping(value = "eureka-client-controller", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     String testDel(@RequestParam String ids);
+
+    @GetMapping(value = "eureka-client-zipkin-controller",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    String method();
 }
