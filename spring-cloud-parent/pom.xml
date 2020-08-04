@@ -14,6 +14,7 @@
         <module>eureka-feign</module>
         <module>eureka-zuul</module>
         <module>config-server</module>
+        <module>cloud-gateway</module>
     </modules>
 
     <!--父级maven项目需要将packaging的类型写成pom-->

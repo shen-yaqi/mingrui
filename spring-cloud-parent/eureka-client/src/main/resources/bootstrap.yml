@@ -12,7 +12,7 @@ spring:
   cloud:
     config:
       # 配置文件前缀 多个配置文件之间用,隔开
-      name: customize
+      name: customize,log
       # 配置文件后缀
       profile: dev
       #uri: http://localhost:8888

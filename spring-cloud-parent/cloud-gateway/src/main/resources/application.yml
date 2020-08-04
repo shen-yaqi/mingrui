@@ -1,9 +1,8 @@
 server:
-  port: 8765
-
+  port: 8881
 spring:
   application:
-    name: eureka-feign
+    name: cloud-gateway
   cloud:
     config:
       # 配置文件前缀 多个配置文件之间用,隔开
@@ -29,11 +28,6 @@ spring:
   zipkin:
     # zipkin 地址
     base-url: http://localhost:9411
-
-feign:
-  hystrix:
-    # feign 高版本断路器默认关闭,所以在此需要手动打开
-    enabled: true
 
 eureka:
   client:

@@ -10,26 +10,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mr.syq</groupId>
-    <artifactId>eureka-feign</artifactId>
+    <artifactId>cloud-gateway</artifactId>
 
     <dependencies>
-
-        <!--boot web组件-->
+        <!-- gateway网关 -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
 
         <!--eureka依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-
-        <!--feign依赖-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
         <!-- zipkin -->
@@ -49,10 +42,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
         </dependency>
-
-
-
     </dependencies>
-
 
 </project>
