@@ -1,12 +1,18 @@
 server:
-  port: 8881
+  port: 8080
+
 spring:
+#  rabbitmq:
+#    host: 119.45.191.248
+#    port: 5672
+#    username: mingrui
+#    password: 123456
   application:
-    name: cloud-gateway
+    name: eureka-client
   cloud:
     config:
       # 配置文件前缀 多个配置文件之间用,隔开
-      name: log
+      name: customize,bus,zipkin
       # 配置文件后缀
       profile: dev
       #uri: http://localhost:8888
@@ -19,18 +25,27 @@ spring:
         enabled: true
         # 配置中心id
         service-id: CONFIG-SERVER
-    # 启用bus
-    bus:
-      enabled: true
-      # 启用消息跟踪
-      trace:
-        enabled: true
-  zipkin:
-    # zipkin 地址
-    base-url: http://localhost:9411
-
+#    # 启用bus
+#    bus:
+#      enabled: true
+#      # 启用消息跟踪
+#      trace:
+#        enabled: true
+#  zipkin:
+#    # zipkin 地址
+#    base-url: http://119.45.191.248:9411
+# 暴露bus-refresh端点
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: bus-refresh
 eureka:
   client:
     service-url:
       # 指定注册中心的服务地址
       defaultZone: http://119.45.191.248:8761/eureka/
+
+
+
+
