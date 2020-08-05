@@ -15,6 +15,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class GatewayConfig {
 
+    @Bean
+    public RouteLocator syqRoute(RouteLocatorBuilder builder){
 
+        return builder.routes()
+                .route("path-route",r -> r.path("/feign-api/**")
+                        .filters(f -> f.stripPrefix(1))
+                        .uri("http://localhost:8765"))
+                .build();
+    }
 
 }

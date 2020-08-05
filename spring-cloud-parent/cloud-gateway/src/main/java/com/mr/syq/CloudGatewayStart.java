@@ -21,13 +21,4 @@ public class CloudGatewayStart {
         SpringApplication.run(CloudGatewayStart.class);
     }
 
-    @Bean
-    public RouteLocator syqRoute(RouteLocatorBuilder builder){
-
-        return builder.routes()
-                .route("path-route",r -> r.path("/feign-api/**")
-                        .filters(f -> f.stripPrefix(1))
-                        .uri("http://localhost:8765"))
-                .build();
-    }
 }

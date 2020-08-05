@@ -3,16 +3,16 @@ server:
 
 spring:
   rabbitmq:
-    host: localhost
+    host: 119.45.191.248
     port: 5672
-    username: guest
-    password: guest
+    username: mingrui
+    password: 123456
   application:
     name: eureka-client
   cloud:
     config:
       # 配置文件前缀 多个配置文件之间用,隔开
-      name: customize,log
+      name: customize
       # 配置文件后缀
       profile: dev
       #uri: http://localhost:8888
@@ -33,7 +33,7 @@ spring:
         enabled: true
   zipkin:
     # zipkin 地址
-    base-url: http://localhost:9411
+    base-url: http://119.45.191.248:9411
 # 暴露bus-refresh端点
 management:
   endpoints:
